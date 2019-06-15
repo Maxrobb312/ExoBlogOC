@@ -1,0 +1,14 @@
+<li class="list-group-item" [ngClass]="{'list-groupe-item' : true,
+                                        'list-groupe-flush' : true,
+                                        'list-group-item-success' : love(post.loveIts),
+                                        'list-group-item-danger' : loveNot(post.loveIts)}">
+   <h4> {{post.title}}  </h4>
+   {{post.created_at | date: 'short'}}
+   <div>     
+   {{post.content}}
+   </div>
+   <span class="badge badge-primary badge-pill">Love : {{post.loveIts}}</span><br>
+   <button class="btn btn-success" (click)="addLove(1,post)">Love It</button>
+   <button style="margin: 2px" class="btn btn-danger" (click)="addLove(-1, post)">Don't Love It</button>
+   
+</li>
