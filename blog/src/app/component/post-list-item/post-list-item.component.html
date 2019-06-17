@@ -1,0 +1,17 @@
+<li class="list-group-item" [ngClass]="{'list-groupe-item' : true,
+                                        'list-groupe-flush' : true,
+                                        'list-group-item-success' : post.loveIts > 0,
+                                        'list-group-item-danger' : post.loveIts < 0}">
+
+   <div class="pull-right" style="color: gray">
+      {{post.created_at | date: 'short'}}</div>
+   <h4> {{post.title}} </h4>
+   <div>
+      {{post.content}}
+   </div>
+   <span class="badge badge-primary badge-pill">Love : {{post.loveIts}}</span><br>
+   <button class="btn btn-success" (click)="addLove(1)">Love It</button>
+   <button style="margin: 2px" class="btn btn-danger" (click)="addLove(-1)">Don't Love It</button>
+   <button class="btn btn-danger pull-right" (click)="delete()">Supprimer post</button>
+
+</li>
